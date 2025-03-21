@@ -18,7 +18,7 @@ spec:
       targetRevision: 4.1.0
       helm:
         valueFiles:
-          - $values/jupyter-values.yaml
+          - $values/helm/jupyter-values.yaml
     - repoURL: 'https://github.com/PototskiyVI/k8s.git'
       targetRevision: master
       ref: values
