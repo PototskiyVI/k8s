@@ -9,26 +9,23 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/PototskiyVI/k8s.git
-        revision: HEAD
+        revision: main
         directories:
           - path: apps/*
   template:
     metadata:
-      name: '{{index .path.segments 1}}-{{index .path.segments 3}}'
+      name: '{{.path.basename}}'
     spec:
       # The project the application belongs to.
       project: default
       # Source of the application manifests
       source:
         repoURL: https://github.com/PototskiyVI/k8s.git
-        targetRevision: HEAD
+        targetRevision: main
         path: '{{.path.path}}'
-
-      # Destination cluster and namespace to deploy the application
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{index .path.segments 1}}-{{index .path.segments 3}}'
-      # Sync policy
+        namespace: '{{.path.basename}}'
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
