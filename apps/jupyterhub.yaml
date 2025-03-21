@@ -12,6 +12,8 @@ spec:
     automated:
       selfHeal: true
       prune: true
+    syncOptions:
+      - CreateNamespace=true
   sources:
     - repoURL: 'https://jupyterhub.github.io/helm-chart'
       chart: jupyterhub
