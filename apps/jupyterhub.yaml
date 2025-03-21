@@ -20,5 +20,5 @@ spec:
         valueFiles:
           - $values/helm/jupyter-values.yaml
     - repoURL: 'https://github.com/PototskiyVI/k8s.git'
-      targetRevision: master
+      targetRevision: main
       ref: values
