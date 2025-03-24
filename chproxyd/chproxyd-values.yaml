@@ -1,0 +1,95 @@
+environment:
+  name: chproxyd
+
+image:
+  name: image_name
+  tag: 1.0.0
+  pullPolicy: IfNotPresent
+  pullSecretName: gitlab-registry
+
+#https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
+cronJobs: [ ]
+  #- name: hello
+#  schedule: "* * * * *"
+#  command: echo Hello from the Kubernetes cluster
+
+#https://kubernetes.io/docs/concepts/workloads/controllers/job/
+jobs: [ ]
+  #- name: hello
+  #  command: echo Hello from the Kubernetes cluster
+  # дополнительные аннотации
+  #  annotations: {}
+  # перменные окружения для конкретной джобы (при необходимости)
+  #  env: {}
+# количество перезапусков в случае ошибки (по дефолту = 6)
+#  backoffLimit:
+
+# key-value список перменменных окружения, которые должны использоваться в качестве секретов
+# Занчения переменных должны быть заключены в двойные ковычки - ""
+# https://kubernetes.io/docs/concepts/configuration/secret/
+secrets: { }
+
+# Домен куба, куда деплоится приложение
+# Устанавливается при деплойменте
+k8sDomain: ''
+
+# key-value список перменменных окржения, которые должны использоваться в качестве обычной конфигурации
+# https://kubernetes.io/docs/concepts/configuration/configmap/
+variables: { }
+
+# список компонентов (подов), которые должны быть запущены в кубере
+components: [ ]
+  # имя компонента, должно быть уникально в рамках приложения
+  #- name: component-name
+  #стратегия обновления
+  #updateStrategy:
+  #  rollingUpdate:
+  #    maxSurge: 25%
+  #    maxUnavailable: 25%
+  #  type: RollingUpdate
+  # описание конфигурации контейнера
+  #  container:
+  # дополнительные аннотации
+  #    annotations: {}
+  # количество реплик
+  #    replicas: 1
+  # ресурсы, которые будет использовать контейнер
+  #    resources:
+  # максимальное количество ресурсов, которое будет выделено контейнеру (не обязательно)
+  #      limits:
+  #        cpu: 100m
+  #        memory: 128Mi
+  # минимальное количество ресурсов, которое требуется для работы контейнера (обязательно)
+  #      requests:
+  #        cpu: 100m
+  #        memory: 128Mi
+  # перменные окружения для конкретного компонента (при необходимости)
+  #    env:
+  #      CUSTOM_ENV: value
+  # порты, которые слушает контейнер
+  #    ports:
+  # имя (alias) порта, должно быть уникально в рамках контейнера
+  #      - name: http
+  # номер порта
+  #        containerPort: 80
+  #livenessProbe:
+  #  httpGet:
+  #    path: /
+  #    port: http
+  #readinessProbe:
+  #  httpGet:
+  #    path: /
+  #    port: http
+  # вклчение маппинга портов и поддомена
+  #  service:
+  # имя поддомена
+  #    name: my-subdomain-name
+  # маппинг портов контейера
+  #    ports:
+  # порт контейнера с alias=http мапится в 80 порт, который будет
+  # использоваться при http обращениях к сервису
+#      - port: 80
+#        targetPort: http
+
+#test:
+#  connectionPort: 80

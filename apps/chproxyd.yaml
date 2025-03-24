@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: jupyterhub-test-from-argo
+  name: chproxyd
   namespace: argocd
 spec:
   project: default
   destination:
-    namespace: jupyterhub-test-from-argo
+    namespace: chproxyd
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
@@ -15,12 +15,12 @@ spec:
     syncOptions:
       - CreateNamespace=true
   sources:
-    - repoURL: 'https://jupyterhub.github.io/helm-chart'
-      chart: jupyterhub
-      targetRevision: 4.1.0
+    - repoURL: 'https://nexus.mamba.ru/repository/helm/roadrunner-microservice-6.0.10.tgz'
+      chart: roadrunner-microservice
+      targetRevision: 6.0.10
       helm:
         valueFiles:
-          - $values/jupyterhub/jupyter-values.yaml
+          - $values/chproxyd/chproxyd-values.yaml
     - repoURL: 'https://github.com/PototskiyVI/k8s.git'
       targetRevision: main
       ref: values
