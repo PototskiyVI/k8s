@@ -15,7 +15,7 @@ spec:
     syncOptions:
       - CreateNamespace=true
   sources:
-    - repoURL: 'https://nexus.mamba.ru/repository/helm/roadrunner-microservice-6.0.10.tgz'
+    - repoURL: 'https://nexus.mamba.ru/repository/helm'
       chart: roadrunner-microservice
       targetRevision: 6.0.10
       helm:
