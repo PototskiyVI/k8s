@@ -38,7 +38,12 @@ k8sDomain: ''
 variables: { }
 
 # список компонентов (подов), которые должны быть запущены в кубере
-components: [ ]
+components:
+  - name: chproxyd
+    type: Deployment
+    container:
+      replicas: 2
+
   # имя компонента, должно быть уникально в рамках приложения
   #- name: component-name
   #стратегия обновления
