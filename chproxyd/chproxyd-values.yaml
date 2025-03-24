@@ -6,7 +6,6 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
   pullSecretName: gitlab-registry
-  tty: true
 
 #https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 cronJobs: [ ]
@@ -43,7 +42,8 @@ components:
   - name: chproxyd
     type: Deployment
     container:
-      replicas: 2
+      replicas: 1
+    tty: true
 
   # имя компонента, должно быть уникально в рамках приложения
   #- name: component-name
