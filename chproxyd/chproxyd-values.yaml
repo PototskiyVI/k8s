@@ -6,6 +6,7 @@ image:
   tag: latest
   pullPolicy: IfNotPresent
   pullSecretName: gitlab-registry
+  tty: true
 
 #https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 cronJobs: [ ]
