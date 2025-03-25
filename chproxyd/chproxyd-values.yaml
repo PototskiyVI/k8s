@@ -41,6 +41,8 @@ variables: { }
 components:
   - name: chproxyd
     type: Deployment
+    command: [ "/usr/local/bin/chproxyd" ]
+    args: [ "--pid-dir=/logs/", "-C", "/usr/monamour/chproxy/events/chproxy.conf" ]
     container:
       replicas: 1
     tty: true
