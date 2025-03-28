@@ -402,13 +402,13 @@ singleuser:
   fsGid: 100
   serviceAccountName:
   storage:
-    type: dynamic
+    type: static
     extraLabels: {}
     extraVolumes: []
     extraVolumeMounts: []
     static:
       pvcName: "share-notebook"
-      subPath: "{username}"
+      subPath: ""
     capacity: 10Gi
     homeMountPath: /home/jovyan
     dynamic:
