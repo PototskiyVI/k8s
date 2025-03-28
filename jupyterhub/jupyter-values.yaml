@@ -402,7 +402,7 @@ singleuser:
   fsGid: 100
   serviceAccountName:
   storage:
-    type: static
+    type: dynamic
     extraLabels: {}
     extraVolumes: []
     extraVolumeMounts: []
