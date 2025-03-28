@@ -408,7 +408,7 @@ singleuser:
     extraVolumeMounts: []
     static:
       pvcName: "share-notebook"
-      subPath: "/"
+      subPath: "{username}"
     capacity: 10Gi
     homeMountPath: /home/jovyan
     dynamic:
