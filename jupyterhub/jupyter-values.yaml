@@ -410,7 +410,7 @@ singleuser:
       pvcName: "share-notebook"
       subPath: ""
     capacity: 10Gi
-    homeMountPath: /home/jovyan
+    homeMountPath: "/home/{username}"
     dynamic:
       storageClass:
       pvcNameTemplate:
