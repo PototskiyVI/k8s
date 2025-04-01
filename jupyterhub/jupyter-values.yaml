@@ -408,7 +408,7 @@ singleuser:
   fsGid: 100
   serviceAccountName:
   storage:
-    type: none
+    type: static
     extraLabels: {}
     extraVolumes: []
     extraVolumeMounts: []
