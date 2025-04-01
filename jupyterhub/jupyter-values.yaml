@@ -38,6 +38,7 @@ hub:
       client_secret: gloas-23a27325618d8c3bc9307c05de281e3436008db03a5f560a5e41841de5aa7ddf
       oauth_callback_url: http://192.168.49.2:31693/hub/oauth_callback
       gitlab_url: http://192.168.1.9
+      allow_all: true
     JupyterHub:
       admin_access: true
       authenticator_class: gitlab
